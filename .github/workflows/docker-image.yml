@@ -4,7 +4,7 @@ uses: appleboy/ssh-action@v0.1.8
 on:
   push:
     branches:
-      - Main         # Trigger the workflow on push to the 'Main' branch
+      - Main        # Trigger the workflow on push to the 'Main' branch
 
 jobs:
   build-and-deploy:
