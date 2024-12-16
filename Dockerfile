@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev gcc || apt-get install -y --fix-missing \
     && apt-get clean
 
-# Set environment variables
+# Set environment variable
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
