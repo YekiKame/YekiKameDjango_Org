@@ -40,6 +40,14 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
           cd /var/www/YekiKameDjango_Org
-          docker-compose down
-          docker-compose pull
-          docker-compose up -d
+           if [ -d "YekiKameDjango_Org" ]; then
+              cd YekiKameDjango_Org && git pull origin main
+            else
+              git clone https://github.com/YekiKame/YekiKameDjango_Org.git YekiKameDjango_Org
+              cd YekiKameDjango_Org
+            fi
+      
+            # Deploy with Docker Compose
+            docker-compose down
+            docker-compose pull
+            docker-compose up -d --force-recreate
