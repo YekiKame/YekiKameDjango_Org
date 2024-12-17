@@ -13,7 +13,7 @@ services:
       - DB_PASSWORD=403723807
       - DB_HOST=db
       - DB_PORT=5432
-    command: ./wait-for-it.sh db:5432 -- python manage.py runserver #0.0.0.0:8000
+    command: ./wait-for-it.sh db:5432 -- python manage.py runserver 95.217.8.192:8000
 #      >
 #      sh -c "while ! nc -z db 5432; do
 #      echo 'Waiting for database...'; sleep 1; done;
