@@ -44,7 +44,7 @@ jobs:
             echo "Project exists. Pulling latest changes..."
             cd YekiKameDjango_Org
             git reset --hard  # Reset any local changes
-            git pull origin main  # Pull the latest code
+            git pull origin Main  # Pull the latest code
           else
             echo "Project does not exist. Cloning repository..."
             git clone https://github.com/your_username/your_repo.git YekiKameDjango_Org
