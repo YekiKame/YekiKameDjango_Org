@@ -8,6 +8,7 @@ services:
     depends_on:
       - db
     environment:
+      - DJANGO_ALLOWED_HOSTS=*
       - DJANGO_LOG_LEVEL=DEBUG
       - DJANGO_LOG_FILE=/logs/django.log #logs address 
       - DEBUG=1
