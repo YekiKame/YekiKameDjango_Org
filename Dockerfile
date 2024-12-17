@@ -29,6 +29,8 @@ RUN chmod +x /wait-for-it.sh
 # Copy project files
 COPY . /app/
 
+RUN python manage.py collectstatic --noinput
+
 # Expose the port the app runs on
 EXPOSE 8000
 
