@@ -40,12 +40,16 @@ jobs:
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
           cd /var/www/YekiKameDjango_Org
-           if [ -d "YekiKameDjango_Org" ]; then
-              cd YekiKameDjango_Org && git pull origin main
-            else
-              git clone https://github.com/YekiKame/YekiKameDjango_Org.git YekiKameDjango_Org
-              cd YekiKameDjango_Org
-            fi
+            if [ -d "YekiKameDjango_Org" ]; then
+            echo "Project exists. Pulling latest changes..."
+            cd YekiKameDjango_Org
+            git reset --hard  # Reset any local changes
+            git pull origin main  # Pull the latest code
+          else
+            echo "Project does not exist. Cloning repository..."
+            git clone https://github.com/your_username/your_repo.git YekiKameDjango_Org
+            cd YekiKameDjango_Org
+          fi
       
             # Deploy with Docker Compose
             docker-compose down
